@@ -121,7 +121,7 @@ public class SE150418 {
                                 hosBLL.searchDoctorByName();
                                 break;
                             case 2:
-                                hosBLL.searchDepartmentByName();
+                                hosBLL.searchDepartmentById();
                                 break;
                             default:
                                 checkCase = false;

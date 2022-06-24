@@ -172,19 +172,18 @@ public class HospitaltBLL {
 
     }
 
-    public void searchDepartmentByName() {
+    public void searchDepartmentById() {
         Map<String, Department> listDeptSearch = new TreeMap<>();
-        String name = DoctorInputValidation.getString("Input department name");
+        String id = deptList.inputIdDept();
         for (Department value : deptList.values()) {
-            if (value.getName().toLowerCase().contains(name.toLowerCase()) == true) {
+            if (value.getDepartmentId().equals(id) == true) {
                 listDeptSearch.put(value.getDepartmentId(), value);
             }
         }
         if (listDeptSearch.isEmpty() == true) {
             System.out.println("Nothing here");
         } else {
-            System.out.println("List of department in hospital whose names contain '" + name + "'");
-            System.out.println("ID=====Name=====Create date=====Last update date");
+            System.out.println("List of department in hospital whose id = " + id);
             for (Department listsearch : listDeptSearch.values()) {
                 listsearch.showInfo();
             }
